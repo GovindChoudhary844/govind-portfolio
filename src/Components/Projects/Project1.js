@@ -2,11 +2,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Row, Col, Nav } from "react-bootstrap";
-import ProjectDesktopAPI from "../../Components/api/ProjectDesktopAPI";
+import projectDesktopAPI from "../api/projectDesktopAPI";
+
 import "../../App.css";
 
 function Project1() {
-  const project = ProjectDesktopAPI[0];
+  const project = projectDesktopAPI[0];
   return (
     <div>
       <style>
