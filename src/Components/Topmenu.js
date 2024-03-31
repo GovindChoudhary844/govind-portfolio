@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "../App.css";
+import "./Topmenu.css";
+import ModeButton from "../Components/ModeButton";
 
-function Topmenu() {
+function Topmenu({ darkMode, toggleDarkMode }) {
   const [menuVisible, setMenuVisible] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const menuRef = useRef(null);
@@ -19,14 +22,6 @@ function Topmenu() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [menuRef]);
-
-  const toggleMenu = () => {
-    setMenuVisible(!menuVisible);
-  };
-
-  const closeMenu = () => {
-    setMenuVisible(false);
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,88 +40,20 @@ function Topmenu() {
     };
   }, []);
 
+  const toggleMenu = () => {
+    setMenuVisible((prevMenuVisible) => !prevMenuVisible);
+  };
+
+  const closeMenu = () => {
+    setMenuVisible(false);
+  };
+
+  const handleClickMenu = () => {
+    toggleMenu();
+  };
+
   return (
     <>
-      <style>
-        {`
-        .top-mode-button {
-          border-radius: 20%;
-          padding: 10px;
-          background: #f2f2f2;
-          box-shadow: -10px 10px 9px #929292;
-        }
-        .top-menu-button {
-          border-radius: 20%;
-          padding: 10px;
-          background: #f2f2f2;
-          box-shadow: -10px 10px 9px #929292;
-          display: none; 
-        }
-        
-        .name-logo {
-          width: 200px;
-        }
-
-        .top-navlink-button {
-          color: black;
-        }
-        .top-navlink-button:hover {
-          color: blue;
-          background-color: #dcdcdc;
-          border-radius: 10px;
-        }
-
-        .top-navlink-button-icon {
-          margin-right: 15px;
-          font-size: 25px;
-        }
-
-        .menu-container {
-          opacity: ${menuVisible ? "1" : "0"};
-          visibility: ${menuVisible ? "visible" : "hidden"};
-          transition: opacity 0.5s, visibility 0.5s;
-          position: absolute;
-          z-index: 1000;
-          background-color: white;
-          border-radius: 10px;
-          padding: 10px;
-          box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-        }
-
-        .top-navbar-col {
-          transition: background-color 0.5s;
-          ${
-            scrolled
-              ? "background: rgba(0, 0, 0, 0.2); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);"
-              : "background-color: transparent;"
-          }
-        }
-        
-
-        @media (max-width: 767.98px) {
-          .top-navbar {
-            height: 20vh !important;
-          }
-          .name-logo {
-            width: 150px !important;
-          }
-        }
-        
-        @media (max-width: 1399px) {
-          .top-navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            padding: 30px;
-            width: 100%;
-            z-index: 1000;
-          }
-          .top-menu-button {
-            display: block;
-          }
-        }
-        `}
-      </style>
       <Container fluid>
         <Container>
           <Row className="top-navbar" style={{ height: "20vh" }}>
@@ -137,9 +64,10 @@ function Topmenu() {
               className="d-flex align-items-center top-navbar-col rounded-start-2"
             >
               <img
-                src="Images\top-logo.png"
+                src={process.env.PUBLIC_URL + "/Images/top-logo.png"}
                 alt="Govind"
                 className="name-logo"
+                style={{ maxWidth: "100%" }}
               />
             </Col>
             <Col
@@ -148,11 +76,17 @@ function Topmenu() {
               md={6}
               className="d-flex align-items-center justify-content-end top-navbar-col rounded-end-2"
             >
-              <div className="top-mode-button mx-3">
-                <i className="fa-solid fa-moon-stars fa-2x"></i>
+              <div>
+                <ModeButton />
               </div>
-              <div className="top-menu-button" onClick={toggleMenu}>
-                <i className="fa-solid fa-bars fa-2x"></i>
+
+              {/* Toggle menu visibility when clicking top-menu-button */}
+              <div className="top-menu-button" onClick={handleClickMenu}>
+                {menuVisible ? (
+                  <i className="fa-solid fa-xmark resp-h1"></i>
+                ) : (
+                  <i className="fa-solid fa-bars resp-h1"></i>
+                )}
               </div>
             </Col>
           </Row>
@@ -175,7 +109,7 @@ function Topmenu() {
                     <Nav.Link
                       as={Link}
                       to="/about"
-                      className="top-navlink-button"
+                      className="top-navlink-button resp-h5"
                       onClick={closeMenu}
                     >
                       <span>
@@ -186,7 +120,7 @@ function Topmenu() {
                     <Nav.Link
                       as={Link}
                       to="/resume"
-                      className="top-navlink-button"
+                      className="top-navlink-button resp-h5"
                       onClick={closeMenu}
                     >
                       <span>
@@ -197,7 +131,7 @@ function Topmenu() {
                     <Nav.Link
                       as={Link}
                       to="/works"
-                      className="top-navlink-button"
+                      className="top-navlink-button resp-h5"
                       onClick={closeMenu}
                     >
                       <span>
@@ -208,7 +142,7 @@ function Topmenu() {
                     <Nav.Link
                       as={Link}
                       to="/blogs"
-                      className="top-navlink-button"
+                      className="top-navlink-button resp-h5"
                       onClick={closeMenu}
                     >
                       <span>
@@ -219,7 +153,7 @@ function Topmenu() {
                     <Nav.Link
                       as={Link}
                       to="/contact"
-                      className="top-navlink-button"
+                      className="top-navlink-button resp-h5"
                       onClick={closeMenu}
                     >
                       <span>
