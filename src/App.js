@@ -48,7 +48,7 @@ function App() {
         }
         @media (max-width: 1399px) {
           .content{
-            margin-top: 30vh;
+            margin-top: 150px;
           }
         } 
       `}
