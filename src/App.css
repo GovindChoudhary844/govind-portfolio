@@ -6,8 +6,9 @@
 
 :root {
   --primary-color: #fff;
-  --secondary-color: #212121;
+  --secondary-color: #f3f3f3;
   --third-color: black;
+  --Fourth-color: #f3f3f3;
 }
 
 
@@ -20,10 +21,13 @@
 
 .dark-mode {
   background-image: url("../public/Images/page-bg-dark.jpg");
-  --primary-color: #000000;
-  --secondary-color: #212121;
+  --primary-color: rgba(0, 0, 0, 0.5);
+  ;
+  --secondary-color: #1a1919;
   --third-color: #fff;
-  background-color: black;
+  --Fourth-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.5);
+  ;
 }
 
 

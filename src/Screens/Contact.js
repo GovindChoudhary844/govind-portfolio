@@ -90,12 +90,7 @@ const Contact = () => {
     <>
       <style>{customStyles}</style>
       <div className="p-2">
-        <Row
-          style={{
-            backgroundColor: "var(--primary-color)",
-          }}
-          className="mt-2"
-        >
+        <Row className="mt-2">
           <Col
             md={4}
             className="d-none d-md-block"

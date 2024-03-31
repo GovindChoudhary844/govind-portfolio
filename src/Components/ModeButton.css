@@ -1,3 +1,15 @@
+.modebutton-svg {
+  width: 75%;
+  height: 75%;
+}
+
+@media (max-width: 575.98px) {
+  .modebutton-svg {
+    width: 60%;
+    height: 60%;
+  }
+}
+
 #theme-toggle-button {
   font-size: 17px;
   position: relative;

@@ -71,7 +71,12 @@ function ProfileSidebar() {
                       variant="flush"
                       className="rounded-2 profile-sidebar-content"
                     >
-                      <ListGroup.Item className="bg-gray">
+                      <ListGroup.Item
+                        style={{
+                          backgroundColor: "var(--secondary-color)",
+                          color: "var(--third-color)",
+                        }}
+                      >
                         <Row>
                           <Col xs={2} sm={2} md={2} className="icon">
                             <Button className="button-desc">
@@ -95,7 +100,12 @@ function ProfileSidebar() {
                         </Row>
                       </ListGroup.Item>
 
-                      <ListGroup.Item className="bg-gray">
+                      <ListGroup.Item
+                        style={{
+                          backgroundColor: "var(--secondary-color)",
+                          color: "var(--third-color)",
+                        }}
+                      >
                         <Row>
                           <Col xs={2} sm={2} md={2} className="icon">
                             <Button className="button-desc">
@@ -120,7 +130,12 @@ function ProfileSidebar() {
                         </Row>
                       </ListGroup.Item>
 
-                      <ListGroup.Item className="bg-gray">
+                      <ListGroup.Item
+                        style={{
+                          backgroundColor: "var(--secondary-color)",
+                          color: "var(--third-color)",
+                        }}
+                      >
                         <Row>
                           <Col xs={2} sm={2} md={2} className="icon">
                             <Button className="button-desc">

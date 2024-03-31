@@ -15,7 +15,6 @@ const Blogs = () => {
       <div
         className="rounded-3 p-4 p-md-5 p-lg-5"
         style={{
-          backgroundColor: "var(--primary-color)",
           color: "var(--third-color)",
         }}
       >

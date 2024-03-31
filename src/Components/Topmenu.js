@@ -56,18 +56,18 @@ function Topmenu({ darkMode, toggleDarkMode }) {
     <>
       <Container fluid>
         <Container>
-          <Row className="top-navbar" style={{ height: "20vh" }}>
+          <Row className="top-navbar" style={{ height: "140px" }}>
             <Col
               xs={6}
               sm={6}
               md={6}
               className="d-flex align-items-center top-navbar-col rounded-start-2"
             >
+              <p className="logo-name">Govind</p>
               <img
                 src={process.env.PUBLIC_URL + "/Images/top-logo.png"}
                 alt="Govind"
-                className="name-logo"
-                style={{ maxWidth: "100%" }}
+                className="logo-image"
               />
             </Col>
             <Col
@@ -86,25 +86,39 @@ function Topmenu({ darkMode, toggleDarkMode }) {
               {/* Toggle menu visibility when clicking top-menu-button */}
               <div className="top-menu-button" onClick={handleClickMenu}>
                 {menuVisible ? (
-                  <i className="fa-solid fa-xmark resp-h1"></i>
+                  <i className="fa-solid fa-xmark resp-h3"></i>
                 ) : (
-                  <i className="fa-solid fa-bars resp-h1"></i>
+                  <i className="fa-solid fa-bars resp-h3"></i>
                 )}
               </div>
             </Col>
           </Row>
         </Container>
+        <div className="collapse" id="navbarToggleExternalContent">
+          <div className="bg-dark p-4">
+            <h5 className="text-white h4">Collapsed content</h5>
+            <span className="text-muted">Toggleable via the navbar brand.</span>
+          </div>
+        </div>
         {/* menu Item */}
         {menuVisible && (
           <Container
             fluid
             className="position-fixed"
-            style={{ marginTop: "20vh", width: "95%", zIndex: "1010" }}
+            style={{
+              marginTop: "140px",
+              width: "95%",
+              zIndex: "1010",
+            }}
           >
             <div
               ref={menuRef}
               className="menu-container"
-              style={{ width: "100%", marginLeft: "-12px" }}
+              style={{
+                width: "100%",
+                marginLeft: "-12px",
+                backgroundColor: "var(--Fourth-color)",
+              }}
             >
               <Row className="rounded-3">
                 <Col sm={12} md={12}>
