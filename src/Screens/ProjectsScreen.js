@@ -3,7 +3,7 @@ import { Row, Col, Button } from "react-bootstrap";
 import Copyright from "../Components/copyright";
 import "../App.css";
 
-import projectDesktopAPI from "../Components/api/projectDesktopAPI"; // Rename the imported module
+import projectDesktopAPI from "../Components/api/projectDesktopAPI";
 
 import ProjectScreenDesktop from "../Components/ProjectScreenComponent/ProjectScreenDesktop";
 import ProjectScreenTablet from "../Components/ProjectScreenComponent/ProjectScreenTablet";
