@@ -5,11 +5,11 @@ import "../../App.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import projectDesktopAPI from "../../Components/api/projectDesktopAPI";
+import ProjectDesktopAPI from "../../Components/api/ProjectDesktopAPI";
 
 function ProjectScreenDesktop() {
   const { projectId } = useParams();
-  const project = projectDesktopAPI.find(
+  const project = ProjectDesktopAPI.find(
     (project) => project.id === parseInt(projectId)
   );
 

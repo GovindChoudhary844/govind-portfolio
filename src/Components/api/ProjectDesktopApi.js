@@ -1,4 +1,4 @@
-const projectDesktopAPI = [
+const ProjectDesktopAPI = [
   {
     id: 1,
     name: "Flower Shop",
@@ -83,4 +83,4 @@ const projectDesktopAPI = [
   },
 ];
 
-export default projectDesktopAPI;
+export default ProjectDesktopAPI;
