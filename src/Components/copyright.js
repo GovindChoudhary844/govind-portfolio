@@ -4,7 +4,13 @@ function Copyright() {
   return (
     <div>
       <div className="copyright text-center text-muted">
-        <p>© 2024 All Rights Reserved by Govind Choudhary.</p>
+        <p
+          style={{
+            color: "var(--third-color)",
+          }}
+        >
+          © 2024 All Rights Reserved by Govind Choudhary.
+        </p>
       </div>
     </div>
   );

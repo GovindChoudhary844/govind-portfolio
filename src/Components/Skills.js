@@ -16,6 +16,7 @@ function Skills() {
         }
         .Skills-button:hover{
           background-color: #088F8F;
+          border: 1px solid #088F8F;
           color: white;
         }
       `}

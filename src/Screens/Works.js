@@ -14,9 +14,12 @@ const Works = () => {
       </style>
       <div
         className="rounded-3 p-4 p-md-5 p-lg-5"
-        style={{ backgroundColor: "white" }}
+        style={{
+          backgroundColor: "var(--primary-color)",
+          color: "var(--third-color)",
+        }}
       >
-        <h1 className="page-title resp-h1 text-center">My Works</h1>
+        <h1 className="page-title resp-h1 text-center">Works</h1>
 
         <Row className="mt-5 d-flex">
           <Copyright />

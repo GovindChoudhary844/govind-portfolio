@@ -1,47 +1,45 @@
+// Project3.js
 import React from "react";
 import { Link } from "react-router-dom";
 import { Row, Col, Nav } from "react-bootstrap";
+import ProjectDesktopAPI from "../../Components/api/projectDesktopAPI";
 import "../../App.css";
 
 function Project3() {
+  const project = ProjectDesktopAPI[2];
   return (
     <div>
       <style>
         {`
-          .image-container {
-            width: 80%;
+          .italic {
+            font-style: italic;
+          }
+          .image-size {
+            width: 100%;
             height: auto;
           }
         `}
       </style>
-      <Nav.Link as={Link} to="/G&C-Organics">
-        <h5 className="resp-h5">
-          G&C Organics (10/2023){" "}
-          <i className="fa-regular fa-arrow-up-right-from-square fa-sm"></i>
-        </h5>
-      </Nav.Link>
       <Row>
-        <Col sm={12} md={7} lg={7} className="d-flex align-items-center">
-          <p className="resp-text">
-            Introducing G&C Organics - a single-page haven for organic
-            enthusiasts. Crafted with HTML, CSS, and Bootstrap, this website is
-            a sleek showcase of purity. Navigate seamlessly through our
-            offerings, from organic produce to eco-friendly goods. The
-            minimalist design ensures a delightful user experience. Dive into
-            G&C Organics - where simplicity meets sustainability.
-          </p>
+        <Col md={7}>
+          <Nav.Link as={Link} to={`/projects/${project.id}`}>
+            <h5 className="resp-h5">
+              {project.name} ({project.date}){" "}
+              <i className="fa-regular fa-arrow-up-right-from-square fa-sm"></i>
+            </h5>
+          </Nav.Link>
+          <p className="text-muted italic resp-text">{project.subname}</p>
+          <p className="resp-text">{project.description}</p>
         </Col>
-        <Col
-          sm={12}
-          md={5}
-          lg={5}
-          className="d-flex align-items-center justify-content-center"
-        >
-          <img src="G-and-C.png" alt="" className="image-container d-block" />
+        <Col md={5}>
+          <img
+            src={process.env.PUBLIC_URL + "/" + project.imagecharacter}
+            alt="Flower Shop"
+            className="image-size"
+          />
         </Col>
       </Row>
     </div>
   );
 }
-
 export default Project3;

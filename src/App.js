@@ -1,5 +1,5 @@
 // App.js
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Container, Row, Col } from "react-bootstrap";
@@ -11,9 +11,16 @@ import Resume from "./Screens/Resume";
 import Works from "./Screens/Works";
 import Blogs from "./Screens/Blogs";
 import Contact from "./Screens/Contact";
-import Projects1Screen from "./Screens/ProjectsScreen/Projects1Screen";
+
+import ProjectsScreen from "../src/Screens/ProjectsScreen";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode((prevDarkMode) => !prevDarkMode);
+  };
+
   return (
     <>
       <style>
@@ -47,9 +54,14 @@ function App() {
       `}
       </style>
       <Router>
-        <Container fluid className="background-image-container">
+        <Container
+          fluid
+          className={`background-image-container ${
+            darkMode ? "dark-mode" : ""
+          }`}
+        >
           <Row>
-            <Topmenu />
+            <Topmenu darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
           </Row>
           <Row className="content pb-5">
             <Col sm={12} md={12} lg={4} xl={4} xxl={3}>
@@ -63,6 +75,7 @@ function App() {
               xl={8}
               xxl={8}
               className="my-5 my-md-0 my-lg-0 pages"
+              style={{ backgroundColor: "var(--primary-color)" }}
             >
               <Routes>
                 <Route path="/" element={<About />} />
@@ -71,7 +84,11 @@ function App() {
                 <Route path="/works" element={<Works />} />
                 <Route path="/blogs" element={<Blogs />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/Flower-Shop" element={<Projects1Screen />} />
+                <Route
+                  path="/projects/:projectId"
+                  element={<ProjectsScreen />}
+                />{" "}
+                {/* Use ProjectsScreen component here */}
               </Routes>
             </Col>
             {/* ====================== */}

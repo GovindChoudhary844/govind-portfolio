@@ -1,10 +1,13 @@
-const ProjectDesktop = [
+const ProjectDesktopAPI = [
   {
     id: 1,
     name: "Flower Shop",
+    subname: "Responsive Django and React.js Flower Shop",
     video: "Images/Projects/Project 1/Project1-Desktop.mp4",
+    date: "12/2023 – 02/2024",
     description:
       "Welcome to our delightful Online Flower Shop, where the process of selecting and ordering your favorite flowers is made effortless. Leveraging the powerful combination of Django and React JS, we've crafted a user-friendly website that ensures a seamless and enjoyable experience for our customers.",
+    imagecharacter: "flower-shop.png",
     images: [
       "Images/Projects/Project 1/Project1-Desktop-SS/1.png",
       "Images/Projects/Project 1/Project1-Desktop-SS/2.png",
@@ -33,9 +36,12 @@ const ProjectDesktop = [
   {
     id: 2,
     name: "Organic Fruits Website",
+    subname: "Responsive HTML, CSS & JS Website",
     video: "Images/Projects/Project 1/Project1-Desktop.mp4",
+    date: "11/2023",
     description:
       "Dive into the freshness of nature with our Organic Fruits and Vegetables website template. Crafted using HTML, CSS, Bootstrap, and JavaScript, it's a simple yet vibrant multipage design. Whether you're on a computer, tablet, or phone, the responsive layout ensures a seamless browsing experience. Explore the pages effortlessly and savor the simplicity of nature's bounty.",
+    imagecharacter: "Organic-Fruits-Website.png",
     images: [
       "Images/Projects/Project 1/Project1-Desktop-SS/1.png",
       "Images/Projects/Project 1/Project1-Desktop-SS/2.png",
@@ -52,9 +58,12 @@ const ProjectDesktop = [
   {
     id: 3,
     name: "G&C Organics",
+    subname: "Responsive HTML, CSS & JS Website",
     video: "Images/Projects/Project 1/Project1-Desktop.mp4",
+    date: "10/2023",
     description:
       "Introducing G&C Organics - a single-page haven for organic enthusiasts. Crafted with HTML, CSS, and Bootstrap, this website is a sleek showcase of purity. Navigate seamlessly through our offerings, from organic produce to eco-friendly goods. The minimalist design ensures a delightful user experience. Dive into G&C Organics - where simplicity meets sustainability.",
+    imagecharacter: "G-and-C.png",
     images: [
       "Images/Projects/Project 1/Project1-Desktop-SS/1.png",
       "Images/Projects/Project 1/Project1-Desktop-SS/2.png",
@@ -74,4 +83,4 @@ const ProjectDesktop = [
   },
 ];
 
-export default ProjectDesktop;
+export default ProjectDesktopAPI;

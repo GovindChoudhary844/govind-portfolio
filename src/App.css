@@ -4,12 +4,28 @@
   font-family: "Poppins", sans-serif;
 }
 
+:root {
+  --primary-color: #fff;
+  --secondary-color: #212121;
+  --third-color: black;
+}
+
+
 .background-image-container {
-  background-image: url("../public/Images/page-bg-1.jpg");
+  background-image: url("../public/Images/page-bg-light.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
+
+.dark-mode {
+  background-image: url("../public/Images/page-bg-dark.jpg");
+  --primary-color: #000000;
+  --secondary-color: #212121;
+  --third-color: #fff;
+  background-color: black;
+}
+
 
 .bg-gray {
   background-color: #f3f3f3;

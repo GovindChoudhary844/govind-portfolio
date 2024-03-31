@@ -77,7 +77,10 @@ function Topmenu({ darkMode, toggleDarkMode }) {
               className="d-flex align-items-center justify-content-end top-navbar-col rounded-end-2"
             >
               <div>
-                <ModeButton />
+                <ModeButton
+                  darkMode={darkMode}
+                  toggleDarkMode={toggleDarkMode}
+                />
               </div>
 
               {/* Toggle menu visibility when clicking top-menu-button */}

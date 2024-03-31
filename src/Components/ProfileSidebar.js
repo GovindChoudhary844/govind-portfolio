@@ -1,162 +1,31 @@
 // ProfileSidebar.js
 import React from "react";
-import { Container, Row, Col, Button, Card, ListGroup } from "react-bootstrap";
+import { Row, Col, Button, Card, ListGroup } from "react-bootstrap";
 import "../App.css";
+import "./ProfileSidebar.css";
 
 function ProfileSidebar() {
   return (
     <>
-      <style>
-        {`
-          .profile-image {
-            aspect-ratio: 5/4;
-            margin-top: -90px;
-          }
-          .profile-image-span {
-            display: flex;
-            justify-content: center;
-          }
-
-          .bg-github {
-            background-color: rgb(220, 220, 220); 
-            border-radius: 15px;
-            transition: 0.5s;
-
-          }
-          .bg-github:hover {
-            background-color: #131418; 
-            border-radius: 15px;
-          }
-          .bg-github i{
-            color: #131418;
-            transition: transform 0.2s ease-in-out;             
-          } 
-          .bg-github i:hover {
-            transform: scale(1.1);
-            color: #fff; 
-          }
-
-          .bg-twitter {
-            background-color: rgb(220, 220, 220); 
-            border-radius: 15px;
-            transition: 0.5s;
-          }
-          .bg-twitter:hover {
-            background-color: #1DA1F2; 
-            border-radius: 15px;
-          }
-          .bg-twitter i{
-            color: #1DA1F2;
-            transition: transform 0.2s ease-in-out;
-          }
-          .bg-twitter i:hover{
-            transform: scale(1.1); 
-            color: #fff;
-          }
-
-          .bg-linkedin {
-            background-color: rgb(220, 220, 220); 
-            border-radius: 15px;
-            transition: 0.5s;
-          }
-          
-          .bg-linkedin:hover {
-            background-color: #0A66C2; 
-            border-radius: 15px;
-          }
-          
-          .bg-linkedin i {
-            color: #0A66C2;
-            transition: transform 0.5s ease-in-out;
-          }
-          
-          .bg-linkedin i:hover {
-            transform: scale(1.1);
-            color: #fff;
-          }
-          
-          .icon {
-            transition: transform 0.5s ease-in-out;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-          
-          .icon i:hover{
-            transform: scale(1.1);
-          }
-
-          .button-desc{
-            background-color: white;
-            color: black;
-            border: 1px solid #088F8F;
-          }
-          .button-desc:hover {
-            background-color: #088F8F;
-            color: white;
-          }
-
-          .sticky-profile {
-            position: -webkit-sticky; 
-            position: sticky;
-            top: 60px;
-          }
-
-          @media (max-width: 575.98px) {
-            .profile-image {
-              margin-top: 40px;
-              margin-bottom: 10px;
-            }
-            .profile-feild{
-              width: 80% !important;
-            }
-          }
-
-          .profile-name {
-            font-family: "Dancing Script", cursive;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
-            font-style: normal;
-          }
-          
-          /* Styles for screens between 576px and 767.98px (small devices) */
-          @media (min-width: 576px) and (max-width: 767.98px) {
-            .profile-image {
-              margin-top: 40px;
-              margin-bottom: 10px;
-            }
-            .profile-feild{
-              width: 80% !important;
-            }
-          }
-          @media (min-width: 768px) and (max-width: 991.98px) {
-            .profile-image {
-              margin-top: 40px;
-              margin-bottom: 10px;
-            }
-            .profile-feild{
-              width: 30% !important;
-            }
-          }
-        `}
-      </style>
       <div className="sticky-profile">
         <Row>
           <Col>
             <div
               className="rounded-3 p-3 "
-              style={{ backgroundColor: "white" }}
+              style={{ backgroundColor: "var(--primary-color)" }}
             >
               <span className="profile-image-span">
                 <img
-                  src="Images/photo.jpg"
+                  src={process.env.PUBLIC_URL + "/Images/photo.jpg"}
                   alt="profile"
                   width={200}
                   className="profile-image rounded-5"
                 />
               </span>
-              <h3 className="text-center my-3 profile-name resp-h2">
+              <h3
+                className="text-center my-3 profile-name resp-h2"
+                style={{ color: "var(--third-color)" }}
+              >
                 Govind Choudhary
               </h3>
               <span className="d-flex justify-content-center align-items-center">
@@ -210,9 +79,7 @@ function ProfileSidebar() {
                             </Button>
                           </Col>
                           <Col xs={10} sm={10} md={10}>
-                            <span className="text-muted resp-text-small">
-                              Phone
-                            </span>
+                            <span className=" resp-text-small">Phone</span>
                             <br />
                             <span>
                               <a
@@ -236,9 +103,7 @@ function ProfileSidebar() {
                             </Button>
                           </Col>
                           <Col xs={10} sm={10} md={10}>
-                            <span className="text-muted resp-text-small">
-                              Email
-                            </span>
+                            <span className=" resp-text-small">Email</span>
                             <br />
                             <span style={{ fontSize: "12px" }}>
                               <a
@@ -263,9 +128,7 @@ function ProfileSidebar() {
                             </Button>
                           </Col>
                           <Col xs={10} sm={10} md={10}>
-                            <span className="text-muted resp-text-small">
-                              Address
-                            </span>
+                            <span className=" resp-text-small">Address</span>
                             <br />
                             <p className="resp-h6">New Delhi, Delhi</p>
                           </Col>

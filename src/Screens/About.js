@@ -27,12 +27,20 @@ const About = () => {
       <div
         id="about-section"
         className="rounded-3 p-4 p-md-5 p-lg-5"
-        style={{ backgroundColor: "white" }}
+        style={{
+          backgroundColor: "var(--primary-color)",
+          color: "var(--third-color)",
+        }}
       >
         <Col>
           <h1 className="page-title resp-h1 text-center my-5">About</h1>
           <span>
-            <p className="text-muted resp-text">
+            <p
+              className=" resp-text"
+              style={{
+                color: "var(--third-color)",
+              }}
+            >
               Experienced web developer proficient in HTML, CSS, and Bootstrap.
               Skilled in creating responsive designs with React-Bootstrap and
               basic knowledge of JavaScript, React.js, Python, Django, and

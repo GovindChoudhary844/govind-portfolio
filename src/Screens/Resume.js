@@ -27,7 +27,10 @@ const Resume = () => {
       </style>
       <div
         className="rounded-3 p-4 p-md-5 p-lg-5"
-        style={{ backgroundColor: "white" }}
+        style={{
+          backgroundColor: "var(--primary-color)",
+          color: "var(--third-color)",
+        }}
       >
         <h1 className="page-title resp-h1 text-center">Resume</h1>
         <h2 className="mt-5 resp-h2">Profile</h2>
