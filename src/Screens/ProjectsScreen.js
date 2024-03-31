@@ -3,8 +3,6 @@ import { Row, Col, Button } from "react-bootstrap";
 import Copyright from "../Components/copyright";
 import "../App.css";
 
-import ProjectDesktopAPI from "../Components/api/ProjectDesktopAPI";
-
 import ProjectScreenDesktop from "../Components/ProjectScreenComponent/ProjectScreenDesktop";
 import ProjectScreenTablet from "../Components/ProjectScreenComponent/ProjectScreenTablet";
 import ProjectScreenMobile from "../Components/ProjectScreenComponent/ProjectScreenMobile";
@@ -15,8 +13,6 @@ function ProjectsScreen() {
   const handleButtonClick = (device) => {
     setSelectedDevice(device);
   };
-
-  const currentProject = ProjectDesktopAPI[0];
 
   return (
     <>
