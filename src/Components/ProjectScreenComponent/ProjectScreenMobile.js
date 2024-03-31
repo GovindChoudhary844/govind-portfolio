@@ -16,6 +16,18 @@ function ProjectScreenMobile() {
   const [showModal, setShowModal] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
+  const [ImageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
+  const handleVideoLoad = () => {
+    setVideoLoaded(true);
+  };
+
   const settings = {
     dots: false,
     infinite: true,
@@ -45,7 +57,17 @@ function ProjectScreenMobile() {
       </Row>
       <Row className="mt-3">
         <Col sm={12} md={12} lg={12} xl={6} xxl={6}>
-          <video controls width="100%" height="auto" className="rounded-3">
+          <video
+            controls
+            width="100%"
+            height="auto"
+            className={`rounded-3 ${!videoLoaded ? "blur" : ""}`}
+            loading="lazy"
+            autoPlay
+            muted
+            loop
+            onLoadedData={handleVideoLoad}
+          >
             <source
               src={process.env.PUBLIC_URL + "/" + project.video}
               type="video/mp4"
@@ -68,18 +90,26 @@ function ProjectScreenMobile() {
         <hr />
         <Col>
           <Slider {...settings}>
-            {project.images.map((imageUrl, index) => (
-              <div key={index} className="p-1">
-                <img
-                  src={process.env.PUBLIC_URL + "/" + imageUrl}
-                  alt=""
-                  className="img-fluid"
-                  onClick={() => handleImageClick(index)}
-                  style={{ cursor: "pointer" }}
-                  loading="lazy"
-                />
-              </div>
-            ))}
+            {project &&
+              project.images.map((index) => (
+                <div key={index} className="p-1">
+                  <img
+                    src={
+                      project
+                        ? process.env.PUBLIC_URL +
+                          "/" +
+                          project.images[selectedImageIndex]
+                        : ""
+                    }
+                    alt=""
+                    className={`img-fluid ${ImageLoaded ? "" : "blur"}`}
+                    onClick={() => handleImageClick(index)}
+                    style={{ cursor: "pointer" }}
+                    loading="lazy"
+                    onLoad={handleImageLoad}
+                  />
+                </div>
+              ))}
           </Slider>
         </Col>
       </Row>

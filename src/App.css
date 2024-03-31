@@ -30,6 +30,9 @@
   ;
 }
 
+.blur {
+  filter: blur(10px);
+}
 
 .bg-gray {
   background-color: #f3f3f3;

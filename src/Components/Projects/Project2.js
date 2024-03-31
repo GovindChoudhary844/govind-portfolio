@@ -1,5 +1,4 @@
-// Project2.js
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Row, Col, Nav } from "react-bootstrap";
 import projectDesktopAPI from "../../Components/api/projectDesktopAPI";
@@ -7,6 +6,12 @@ import "../../App.css";
 
 function Project2() {
   const project = projectDesktopAPI[1];
+  const [ImageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
   return (
     <div>
       <style>
@@ -18,14 +23,19 @@ function Project2() {
             width: 100%;
             height: auto;
           }
+          .blur {
+            filter: blur(10px);
+          }
         `}
       </style>
-      <Row>
+      <Row className="d-flex align-items-center">
         <Col md={5}>
           <img
             src={process.env.PUBLIC_URL + "/" + project.imagecharacter}
             alt="Flower Shop"
-            className="image-size"
+            className={`image-size ${ImageLoaded ? "" : "blur"}`}
+            loading="lazy"
+            onLoad={handleImageLoad}
           />
         </Col>
         <Col md={7}>

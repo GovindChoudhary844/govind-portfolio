@@ -16,6 +16,18 @@ function ProjectScreenDesktop() {
   const [showModal, setShowModal] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
+  const [ImageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
+  const handleVideoLoad = () => {
+    setVideoLoaded(true);
+  };
+
   const settings = {
     dots: false,
     infinite: true,
@@ -59,7 +71,17 @@ function ProjectScreenDesktop() {
       </Row>
       <Row className="mt-3">
         <Col sm={12} md={12} lg={12} xl={6} xxl={6} className="Desktop-bg">
-          <video controls width="100%" height="auto" className="rounded-3">
+          <video
+            controls
+            width="100%"
+            height="auto"
+            className={`rounded-3 ${!videoLoaded ? "blur" : ""}`}
+            loading="lazy"
+            autoPlay
+            muted
+            loop
+            onLoadedData={handleVideoLoad}
+          >
             <source
               src={project ? process.env.PUBLIC_URL + "/" + project.video : ""}
               type="video/mp4"
@@ -85,7 +107,7 @@ function ProjectScreenDesktop() {
         <Col>
           <Slider {...settings}>
             {project &&
-              project.images.map((imageUrl, index) => (
+              project.images.map((index) => (
                 <div key={index} className="p-1">
                   <img
                     src={
@@ -96,10 +118,11 @@ function ProjectScreenDesktop() {
                         : ""
                     }
                     alt=""
-                    className="img-fluid"
+                    className={`img-fluid ${ImageLoaded ? "" : "blur"}`}
                     onClick={() => handleImageClick(index)}
                     style={{ cursor: "pointer" }}
                     loading="lazy"
+                    onLoad={handleImageLoad}
                   />
                 </div>
               ))}
