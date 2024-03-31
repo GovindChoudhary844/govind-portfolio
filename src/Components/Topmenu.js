@@ -61,7 +61,7 @@ function Topmenu({ darkMode, toggleDarkMode }) {
               xs={6}
               sm={6}
               md={6}
-              className="d-flex align-items-center justify-content-center top-navbar-col rounded-start-2"
+              className="d-flex align-items-center top-navbar-col rounded-start-2"
             >
               <div className="d-flex align-items-center">
                 <p className="logo-name mb-0">Govind</p>
