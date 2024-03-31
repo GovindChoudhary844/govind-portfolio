@@ -9,7 +9,7 @@ import projectDesktopAPI from "../../Components/api/projectDesktopAPI";
 
 function ProjectScreenDesktop() {
   const { projectId } = useParams();
-  const project = ProjectDesktopAPI.find(
+  const project = projectDesktopAPI.find(
     (project) => project.id === parseInt(projectId)
   );
 
