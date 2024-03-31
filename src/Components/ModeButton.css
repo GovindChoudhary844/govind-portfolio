@@ -1,4 +1,4 @@
-/* #theme-toggle-button {
+#theme-toggle-button {
   font-size: 17px;
   position: relative;
   display: inline-block;
@@ -64,4 +64,4 @@
 
 #toggle:checked+svg #stars {
   opacity: 1;
-} */
+}

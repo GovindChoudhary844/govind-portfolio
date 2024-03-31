@@ -3,7 +3,7 @@ import { Container, Row, Col, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../App.css";
 import "./Topmenu.css";
-import { ModeButton } from "../Components/ModeButton";
+import ModeButton from "../Components/ModeButton";
 
 function Topmenu({ darkMode, toggleDarkMode }) {
   const [menuVisible, setMenuVisible] = useState(false);
