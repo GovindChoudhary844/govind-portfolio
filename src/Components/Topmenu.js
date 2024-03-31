@@ -61,15 +61,18 @@ function Topmenu({ darkMode, toggleDarkMode }) {
               xs={6}
               sm={6}
               md={6}
-              className="d-flex align-items-center top-navbar-col rounded-start-2"
+              className="d-flex align-items-center justify-content-center top-navbar-col rounded-start-2"
             >
-              <p className="logo-name">Govind</p>
-              <img
-                src={process.env.PUBLIC_URL + "/Images/top-logo.png"}
-                alt="Govind"
-                className="logo-image"
-              />
+              <div className="d-flex align-items-center">
+                <p className="logo-name mb-0">Govind</p>
+                <img
+                  src={process.env.PUBLIC_URL + "/Images/top-logo.png"}
+                  alt="Govind"
+                  className="logo-image ms-2"
+                />
+              </div>
             </Col>
+
             <Col
               xs={6}
               sm={6}
