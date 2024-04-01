@@ -53,35 +53,41 @@ function ProjectScreenMobile() {
       <Row>
         <Col>
           <h1 className="resp-h2">{project.name} - Mobile Mode</h1>
+          {project.link && (
+            <p className="resp-text">
+              Visit website:{" "}
+              <a href={project.link} target="_blank">
+                {project.link}
+              </a>
+            </p>
+          )}
         </Col>
       </Row>
       <Row className="mt-3">
-        <Col sm={12} md={12} lg={12} xl={6} xxl={6}>
-          <video
-            controls
-            width="100%"
-            height="auto"
-            className={`rounded-3 ${!videoLoaded ? "blur" : ""}`}
-            loading="lazy"
-            autoPlay
-            muted
-            loop
-            onLoadedData={handleVideoLoad}
+        <Col sm={12} md={12} lg={12} xl={6} xxl={6} className="Desktop-bg">
+          <div
+            className="video-container rounded-3"
+            style={{ height: "350px" }}
           >
-            <source
-              src={process.env.PUBLIC_URL + "/" + project.video}
-              type="video/mp4"
-              loading="lazy"
-            />
-          </video>
+            <iframe
+              width="100%"
+              height="100%"
+              className="rounded-3"
+              src={project ? `${project.video}?rel=0` : ""}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
         </Col>
+
         <Col
           sm={12}
           md={12}
           lg={12}
           xl={6}
           xxl={6}
-          className="d-flex align-items-center"
+          className="d-flex align-items-center  mt-3"
         >
           <p className="resp-text">{project.description}</p>
         </Col>

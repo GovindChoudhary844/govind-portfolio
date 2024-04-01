@@ -161,17 +161,6 @@ function Topmenu({ darkMode, toggleDarkMode }) {
                     </Nav.Link>
                     <Nav.Link
                       as={Link}
-                      to="/blogs"
-                      className="top-navlink-button resp-h5"
-                      onClick={closeMenu}
-                    >
-                      <span>
-                        <i className="fa-regular fa-blog top-navlink-button-icon"></i>
-                      </span>
-                      Blogs
-                    </Nav.Link>
-                    <Nav.Link
-                      as={Link}
                       to="/contact"
                       className="top-navlink-button resp-h5"
                       onClick={closeMenu}

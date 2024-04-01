@@ -9,6 +9,8 @@
   --secondary-color: #f3f3f3;
   --third-color: black;
   --Fourth-color: #f3f3f3;
+  --fifth-color: #088F8F;
+  --sixth-color: #696969;
 }
 
 
@@ -17,6 +19,8 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  left: 0;
+  right: 0;
 }
 
 .dark-mode {
@@ -26,6 +30,8 @@
   --secondary-color: #1a1919;
   --third-color: #fff;
   --Fourth-color: rgba(0, 0, 0, 0.9);
+  --fifth-color: rgba(0, 0, 0, 0.5);
+  --sixth-color: #f3f3f3;
   background-color: rgba(0, 0, 0, 0.5);
   ;
 }
@@ -97,4 +103,12 @@ hr {
   padding: 0 4px;
   position: relative;
   top: -13px;
+}
+
+.heading {
+  transition: all 0.3s;
+}
+
+.heading:hover {
+  color: #088F8F;
 }

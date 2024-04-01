@@ -8,7 +8,8 @@ const CustomNavbar = () => {
       <style>
         {`
         .navlink-button{
-          background-color: #DCDCDC;
+          background-color: var(--Fourth-color);
+          color: var(--third-color);
           border-radius: 10px;
           text-align: center;
           transition: 0.5s;
@@ -17,9 +18,9 @@ const CustomNavbar = () => {
           transition: transform 0.2s ease-in-out;
         }
         .navlink-button:hover{
-          background-color: #088F8F;
+          background-color: var(--secondary-color);
           transform: scale(1.1);
-          color: white;
+          color: var(--third-color);
         }
 
         .sticky-navbar {
@@ -41,7 +42,8 @@ const CustomNavbar = () => {
           collapseOnSelect
           expand="lg"
           variant="light"
-          className="rounded-3 bg-green"
+          className="rounded-3"
+          style={{ backgroundColor: "var(--fifth-color)" }}
         >
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -75,16 +77,6 @@ const CustomNavbar = () => {
                 </span>
                 <br />
                 Works
-              </Nav.Link>
-              <Nav.Link as={Link} to="/blogs" className="navlink-button">
-                <span>
-                  <i
-                    className="fa-regular fa-blog"
-                    style={{ fontSize: "25px" }}
-                  ></i>
-                  <br />
-                </span>
-                Blogs
               </Nav.Link>
               <Nav.Link as={Link} to="/contact" className="navlink-button">
                 <span>

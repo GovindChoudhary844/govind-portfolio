@@ -29,7 +29,14 @@ function Education() {
       </style>
       <Col>
         <h5 className="resp-h5">St. Columbus School, Faridabad, India</h5>
-        <p className="text-muted italic resp-text">Class 12, 2020</p>
+        <p
+          className="italic resp-text"
+          style={{
+            color: "var(--sixth-color)",
+          }}
+        >
+          Class 12, 2020
+        </p>
         <p className="resp-text">
           Passed 12th in (Commerce) from CBSE board achieving 70%
         </p>
@@ -39,7 +46,14 @@ function Education() {
         <h5 className="resp-h5">
           Aravali College Of Engineering And Management, Faridabad, India
         </h5>
-        <p className="text-muted italic resp-text">BCA, 2020 – 2023</p>
+        <p
+          className="italic resp-text"
+          style={{
+            color: "var(--sixth-color)",
+          }}
+        >
+          BCA, 2020 – 2023
+        </p>
         <p className="resp-text">
           Bachelor of Computer Application - Graduated
         </p>

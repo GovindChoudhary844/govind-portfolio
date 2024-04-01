@@ -3,32 +3,24 @@ import React, { useState, useEffect } from "react";
 import "./ModeButton.css";
 
 function ModeButton({ darkMode, toggleDarkMode }) {
-  // Initialize isChecked state with the value of darkMode prop
   const [isChecked, setIsChecked] = useState(darkMode);
 
-  // Function to handle checkbox toggle
   const handleToggle = () => {
-    // Toggle the isChecked state
     setIsChecked(!isChecked);
-    // Call toggleDarkMode to handle dark mode toggling
     toggleDarkMode();
   };
 
-  // Effect to store isChecked state in local storage whenever it changes
   useEffect(() => {
     localStorage.setItem("darkMode", isChecked.toString());
   }, [isChecked]);
 
-  // Effect to retrieve isChecked state from local storage on component mount
   useEffect(() => {
-    // Retrieve the state from local storage
     const savedDarkMode = localStorage.getItem("darkMode");
 
-    // Set the isChecked state to the retrieved value
     if (savedDarkMode !== null) {
       setIsChecked(savedDarkMode === "true");
     }
-  }, []); // Empty dependency array to run only once on component mount
+  }, []);
 
   return (
     <div>

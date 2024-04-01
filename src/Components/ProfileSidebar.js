@@ -45,22 +45,13 @@ function ProfileSidebar() {
               <Row className="social-icons d-flex my-3">
                 <Col className="d-flex justify-content-center gap-2">
                   <a href="#" className="bg-github">
-                    <i
-                      className="fa-brands fa-github p-3"
-                      style={{ fontSize: "1.5em" }}
-                    ></i>
+                    <i className="fa-brands fa-github p-3 resp-h5"></i>
                   </a>
                   <a href="#" className="bg-twitter">
-                    <i
-                      className="fa-brands fa-twitter p-3"
-                      style={{ fontSize: "1.5em" }}
-                    ></i>
+                    <i className="fa-brands fa-twitter p-3 resp-h5"></i>
                   </a>
                   <a href="#" className="bg-linkedin">
-                    <i
-                      className="fa-brands fa-linkedin-in p-3"
-                      style={{ fontSize: "1.5em" }}
-                    ></i>
+                    <i className="fa-brands fa-linkedin-in p-3 resp-h5"></i>
                   </a>
                 </Col>
               </Row>
@@ -80,7 +71,7 @@ function ProfileSidebar() {
                         <Row>
                           <Col xs={2} sm={2} md={2} className="icon">
                             <Button className="button-desc">
-                              <i className="fa-solid fa-phone"></i>
+                              <i className="fa-solid fa-phone resp-h6"></i>
                             </Button>
                           </Col>
                           <Col xs={10} sm={10} md={10}>
@@ -109,7 +100,7 @@ function ProfileSidebar() {
                         <Row>
                           <Col xs={2} sm={2} md={2} className="icon">
                             <Button className="button-desc">
-                              <i className="fa-solid fa-envelope"></i>
+                              <i className="fa-solid fa-envelope resp-h6"></i>
                             </Button>
                           </Col>
                           <Col xs={10} sm={10} md={10}>
@@ -139,7 +130,7 @@ function ProfileSidebar() {
                         <Row>
                           <Col xs={2} sm={2} md={2} className="icon">
                             <Button className="button-desc">
-                              <i className="fa-solid fa-location-dot"></i>
+                              <i className="fa-solid fa-location-dot resp-h6"></i>
                             </Button>
                           </Col>
                           <Col xs={10} sm={10} md={10}>
@@ -156,13 +147,13 @@ function ProfileSidebar() {
               <Row>
                 <Col className="d-flex justify-content-center align-items-center my-3 mb-5">
                   <Button
-                    variant="primary"
+                    className="bg-green resp-text"
                     href="https://drive.google.com/file/d/1w0aH_c1uko22L5h5m1qhb9Ilzdo8v9Y4/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     download
                   >
-                    Download CV
+                    Download
                   </Button>
                 </Col>
               </Row>

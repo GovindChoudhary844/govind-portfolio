@@ -72,7 +72,15 @@ const Resume = () => {
         </Col>
         <Row className="align-items-center justify-content-center">
           <Col className="text-center">
-            <Button className="bg-green resp-text">Download</Button>
+            <Button
+              className="bg-green resp-text"
+              href="https://drive.google.com/file/d/1w0aH_c1uko22L5h5m1qhb9Ilzdo8v9Y4/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+            >
+              Download
+            </Button>
           </Col>
         </Row>
         <Row className="mt-5 d-flex">

@@ -9,7 +9,6 @@ import Navbar from "./Components/Navbar";
 import About from "./Screens/About";
 import Resume from "./Screens/Resume";
 import Works from "./Screens/Works";
-import Blogs from "./Screens/Blogs";
 import Contact from "./Screens/Contact";
 
 import ProjectsScreen from "../src/Screens/ProjectsScreen";
@@ -35,8 +34,10 @@ function App() {
           .content{
             padding-left: 0;
             padding-right: 0;
+            margin-top: 160px;
           }
         }
+
         @media (min-width: 768px) and (max-width: 991.98px){
           .content{
             padding-left: 10%;
@@ -45,10 +46,14 @@ function App() {
           .pages{
             margin-top: 2em !important;
           }
-        }
-        @media (max-width: 1399px) {
           .content{
-            margin-top: 150px;
+            margin-top: 160px;
+          }
+        }
+        
+        @media (min-width: 991.98px) and (max-width: 1399px) {
+          .content{
+            margin-top: 225px;
           }
         } 
       `}
@@ -74,7 +79,7 @@ function App() {
               lg={8}
               xl={8}
               xxl={8}
-              className="my-5 my-md-0 my-lg-0 pages"
+              className="my-5 my-md-0 my-lg-0 pages rounded-3"
               style={{ backgroundColor: "var(--primary-color)" }}
             >
               <Routes>
@@ -82,7 +87,6 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/resume" element={<Resume />} />
                 <Route path="/works" element={<Works />} />
-                <Route path="/blogs" element={<Blogs />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route
                   path="/projects/:projectId"
