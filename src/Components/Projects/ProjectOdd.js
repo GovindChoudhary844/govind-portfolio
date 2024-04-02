@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Row, Col, Nav } from "react-bootstrap";
-import projectDesktopAPI from "../../Components/api/projectDesktopAPI";
+import projectDesktopAPI from "../api/projectDesktopAPI";
 import "../../App.css";
 
-function Project2() {
-  const project = projectDesktopAPI[1];
+function ProjectOdd({ index }) {
+  const project = projectDesktopAPI[index];
   const [ImageLoaded, setImageLoaded] = useState(false);
 
   const handleImageLoad = () => {
@@ -29,15 +29,6 @@ function Project2() {
         `}
       </style>
       <Row className="d-flex align-items-center">
-        <Col md={5}>
-          <img
-            src={process.env.PUBLIC_URL + "/" + project.imagecharacter}
-            alt="Flower Shop"
-            className={`image-size ${ImageLoaded ? "" : "blur"}`}
-            loading="lazy"
-            onLoad={handleImageLoad}
-          />
-        </Col>
         <Col md={7}>
           <Nav.Link as={Link} to={`/projects/${project.id}`}>
             <h5 className="resp-h5 heading">
@@ -55,9 +46,18 @@ function Project2() {
           </p>
           <p className="resp-text">{project.description}</p>
         </Col>
+        <Col md={5}>
+          <img
+            src={process.env.PUBLIC_URL + "/" + project.imagecharacter}
+            alt="Flower Shop"
+            className={`image-size ${ImageLoaded ? "" : "blur"}`}
+            loading="lazy"
+            onLoad={handleImageLoad}
+          />
+        </Col>
       </Row>
     </div>
   );
 }
 
-export default Project2;
+export default ProjectOdd;

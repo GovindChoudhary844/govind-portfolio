@@ -5,11 +5,11 @@ import "../../App.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import projectTabletAPI from "../../Components/api/projectTabletAPI";
+import projectDesktopAPI from "../../Components/api/projectDesktopAPI";
 
 function ProjectScreenTablet() {
   const { projectId } = useParams();
-  const project = projectTabletAPI.find(
+  const project = projectDesktopAPI.find(
     (project) => project.id === parseInt(projectId)
   );
 
@@ -67,13 +67,13 @@ function ProjectScreenTablet() {
         <Col sm={12} md={12} lg={12} xl={6} xxl={6}>
           <div
             className="video-container rounded-3"
-            style={{ height: "350px" }}
+            style={{ height: "250px" }}
           >
             <iframe
               width="100%"
               height="100%"
               className="rounded-3"
-              src={project ? `${project.video}?rel=0` : ""}
+              src={project ? `${project.videoTablet}?rel=0` : ""}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -96,14 +96,14 @@ function ProjectScreenTablet() {
         <Col>
           <Slider {...settings}>
             {project &&
-              project.images.map((index) => (
+              project.imagesTablet.map((index) => (
                 <div key={index} className="p-1">
                   <img
                     src={
                       project
                         ? process.env.PUBLIC_URL +
                           "/" +
-                          project.images[selectedImageIndex]
+                          project.imagesTablet[selectedImageIndex]
                         : ""
                     }
                     alt=""
@@ -126,7 +126,9 @@ function ProjectScreenTablet() {
               className="fa-solid fa-circle-chevron-left position-absolute"
               onClick={() =>
                 setSelectedImageIndex((prevIndex) =>
-                  prevIndex === 0 ? project.images.length - 1 : prevIndex - 1
+                  prevIndex === 0
+                    ? project.imagesTablet.length - 1
+                    : prevIndex - 1
                 )
               }
               style={{ cursor: "pointer" }}
@@ -135,7 +137,7 @@ function ProjectScreenTablet() {
               src={
                 process.env.PUBLIC_URL +
                 "/" +
-                project.images[selectedImageIndex]
+                project.imagesTablet[selectedImageIndex]
               }
               alt=""
               className="img-fluid"
@@ -146,7 +148,9 @@ function ProjectScreenTablet() {
               className="fa-solid fa-circle-chevron-right"
               onClick={() =>
                 setSelectedImageIndex((prevIndex) =>
-                  prevIndex === project.images.length - 1 ? 0 : prevIndex + 1
+                  prevIndex === project.imagesTablet.length - 1
+                    ? 0
+                    : prevIndex + 1
                 )
               }
               style={{ cursor: "pointer", marginLeft: "-10px" }}

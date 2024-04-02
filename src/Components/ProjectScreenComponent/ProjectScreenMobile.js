@@ -5,11 +5,11 @@ import "../../App.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import projectMobileAPI from "../../Components/api/projectMobileAPI";
+import projectDesktopAPI from "../../Components/api/projectDesktopAPI";
 
 function ProjectScreenMobile() {
   const { projectId } = useParams();
-  const project = projectMobileAPI.find(
+  const project = projectDesktopAPI.find(
     (project) => project.id === parseInt(projectId)
   );
 
@@ -67,13 +67,13 @@ function ProjectScreenMobile() {
         <Col sm={12} md={12} lg={12} xl={6} xxl={6} className="Desktop-bg">
           <div
             className="video-container rounded-3"
-            style={{ height: "350px" }}
+            style={{ height: "250px" }}
           >
             <iframe
               width="100%"
               height="100%"
               className="rounded-3"
-              src={project ? `${project.video}?rel=0` : ""}
+              src={project ? `${project.videoMobile}?rel=0` : ""}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -97,14 +97,14 @@ function ProjectScreenMobile() {
         <Col>
           <Slider {...settings}>
             {project &&
-              project.images.map((index) => (
+              project.imagesMobile.map((index) => (
                 <div key={index} className="p-1">
                   <img
                     src={
                       project
                         ? process.env.PUBLIC_URL +
                           "/" +
-                          project.images[selectedImageIndex]
+                          project.imagesMobile[selectedImageIndex]
                         : ""
                     }
                     alt=""
@@ -127,7 +127,9 @@ function ProjectScreenMobile() {
               className="fa-solid fa-circle-chevron-left position-absolute"
               onClick={() =>
                 setSelectedImageIndex((prevIndex) =>
-                  prevIndex === 0 ? project.images.length - 1 : prevIndex - 1
+                  prevIndex === 0
+                    ? project.imagesMobile.length - 1
+                    : prevIndex - 1
                 )
               }
               style={{ cursor: "pointer" }}
@@ -136,7 +138,7 @@ function ProjectScreenMobile() {
               src={
                 process.env.PUBLIC_URL +
                 "/" +
-                project.images[selectedImageIndex]
+                project.imagesMobile[selectedImageIndex]
               }
               alt=""
               className="img-fluid"
@@ -147,7 +149,9 @@ function ProjectScreenMobile() {
               className="fa-solid fa-circle-chevron-right"
               onClick={() =>
                 setSelectedImageIndex((prevIndex) =>
-                  prevIndex === project.images.length - 1 ? 0 : prevIndex + 1
+                  prevIndex === project.imagesMobile.length - 1
+                    ? 0
+                    : prevIndex + 1
                 )
               }
               style={{ cursor: "pointer", marginLeft: "-10px" }}

@@ -30,6 +30,10 @@ function ProjectsScreen() {
             background-color: #017d7d;
             border: 1px solid #017d7d;
           }
+          .bg-green:active {
+            background-color: #005151 !important;
+            border: 1px solid #005151 !important;
+          }
         `}
       </style>
       <div

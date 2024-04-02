@@ -2,9 +2,8 @@
 import React from "react";
 import { Col, Row, Button } from "react-bootstrap";
 import Skills from "../Components/Skills";
-import Project1 from "../Components/Projects/Project1";
-import Project2 from "../Components/Projects/Project2";
-import Project3 from "../Components/Projects/Project3";
+import ProjectOdd from "../Components/Projects/ProjectOdd";
+import ProjectEven from "../Components/Projects/ProjectEven";
 import Courses from "../Components/Courses";
 import Education from "../Components/Education";
 import Copyright from "../Components/copyright";
@@ -19,9 +18,15 @@ const Resume = () => {
           .bg-green{
             border: 1px solid #088F8F;
           }
-          .bg-green:hover{
+
+          .bg-green:hover {
             background-color: #017d7d;
             border: 1px solid #017d7d;
+          }
+
+          .bg-green:active {
+            background-color: #005151 !important;
+            border: 1px solid #005151 !important;
           }
       `}
       </style>
@@ -51,11 +56,11 @@ const Resume = () => {
         <Col>
           <h2 className="resp-h2 mt-lg-5 mt-md-5 mt-2 text-center">Projects</h2>
           <hr />
-          <Project1 />
+          <ProjectOdd index={0} />
           <hr className="hr-small" />
-          <Project2 />
+          <ProjectEven index={1} />
           <hr className="hr-small" />
-          <Project3 />
+          <ProjectOdd index={2} />
         </Col>
         <Col>
           <h2 className="resp-h2 mt-lg-5 mt-md-5 mt-2 text-center">Courses</h2>
@@ -74,7 +79,7 @@ const Resume = () => {
           <Col className="text-center">
             <Button
               className="bg-green resp-text"
-              href="https://drive.google.com/file/d/1w0aH_c1uko22L5h5m1qhb9Ilzdo8v9Y4/view?usp=sharing"
+              href="https://drive.google.com/file/d/1cDhMVT6BoEVC5TWte3--aeroCGJA9K4H/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               download

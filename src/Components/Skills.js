@@ -19,6 +19,10 @@ function Skills() {
           border: 1px solid #088F8F;
           color: white;
         }
+        .Skills-button:active {
+          background-color: #005151 !important;
+          border: 1px solid #005151 !important;
+        }
       `}
       </style>
       <Col>
