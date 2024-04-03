@@ -5,7 +5,11 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (window.innerWidth <= 992) {
+      window.scrollTo(0, window.innerHeight * 1.3);
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, [pathname]);
 
   return null;
