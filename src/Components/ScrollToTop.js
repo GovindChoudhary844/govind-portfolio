@@ -6,7 +6,7 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     if (window.innerWidth <= 992) {
-      window.scrollTo(0, window.innerHeight * 1.3);
+      window.scrollTo(0, window.innerHeight * 1.2);
     } else {
       window.scrollTo(0, 0);
     }
