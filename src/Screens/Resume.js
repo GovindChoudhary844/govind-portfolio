@@ -61,6 +61,11 @@ const Resume = () => {
           <ProjectEven index={1} />
           <hr className="hr-small" />
           <ProjectOdd index={2} />
+          <h2 className="resp-h2 mt-lg-5 mt-md-5 mt-2 text-center">
+            Wordpress Websites
+          </h2>
+          <hr />
+          <ProjectEven index={3} />
         </Col>
         <Col>
           <h2 className="resp-h2 mt-lg-5 mt-md-5 mt-2 text-center">Courses</h2>

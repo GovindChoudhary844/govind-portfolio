@@ -13,6 +13,9 @@ import Contact from "./Screens/Contact";
 
 import ProjectsScreen from "../src/Screens/ProjectsScreen";
 
+import ScrollToTop from "./Components/ScrollToTop";
+import ScrollToTopButton from "./Components/ScrollToTopButton";
+
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -68,6 +71,8 @@ function App() {
           <Row>
             <Topmenu darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
           </Row>
+          <ScrollToTop />
+          <ScrollToTopButton />
           <Row className="content pb-5">
             <Col sm={12} md={12} lg={4} xl={4} xxl={3}>
               <ProfileSidebar />

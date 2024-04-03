@@ -56,7 +56,11 @@ function ProjectScreenTablet() {
           {project.link && (
             <p className="resp-text">
               Visit website:{" "}
-              <a href={project.link} target="_blank">
+              <a
+                href={project.link}
+                target="_blank"
+                className="text-decoration-none"
+              >
                 {project.link}
               </a>
             </p>

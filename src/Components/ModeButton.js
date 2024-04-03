@@ -8,10 +8,12 @@ function ModeButton({ darkMode, toggleDarkMode }) {
   const handleToggle = () => {
     setIsChecked(!isChecked);
     toggleDarkMode();
+    toggleBackgroundImage(isChecked);
   };
 
   useEffect(() => {
     localStorage.setItem("darkMode", isChecked.toString());
+    toggleBackgroundImage(isChecked);
   }, [isChecked]);
 
   useEffect(() => {
@@ -19,8 +21,22 @@ function ModeButton({ darkMode, toggleDarkMode }) {
 
     if (savedDarkMode !== null) {
       setIsChecked(savedDarkMode === "true");
+      toggleBackgroundImage(savedDarkMode === "true");
     }
   }, []);
+
+  const toggleBackgroundImage = (isChecked) => {
+    const backgroundContainer = document.querySelector(
+      ".background-image-container"
+    );
+    if (backgroundContainer) {
+      if (isChecked) {
+        backgroundContainer.classList.add("dark-mode");
+      } else {
+        backgroundContainer.classList.remove("dark-mode");
+      }
+    }
+  };
 
   return (
     <div>
@@ -31,7 +47,7 @@ function ModeButton({ darkMode, toggleDarkMode }) {
         <input
           type="checkbox"
           id="toggle"
-          checked={isChecked}
+          checked={darkMode}
           onChange={handleToggle}
         />
         <svg

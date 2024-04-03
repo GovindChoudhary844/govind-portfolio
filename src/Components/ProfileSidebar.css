@@ -3,6 +3,16 @@
   margin-top: -90px;
 }
 
+.bg-green {
+  border: 1px solid #088F8F;
+  display: block;
+}
+
+.bg-green:hover {
+  background-color: #017d7d;
+  border: 1px solid #017d7d;
+}
+
 .profile-image-span {
   display: flex;
   justify-content: center;

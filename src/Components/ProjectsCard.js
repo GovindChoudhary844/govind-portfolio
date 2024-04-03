@@ -1,13 +1,18 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button, Card } from "react-bootstrap";
 import "../App.css";
 
 function ProjectsCard({ project }) {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const navigate = useNavigate();
 
   const handleImageLoad = () => {
     setImageLoaded(true);
+  };
+
+  const redirectToProjectDetails = () => {
+    navigate(`/projects/${project.id}`);
   };
 
   return (
@@ -25,12 +30,21 @@ function ProjectsCard({ project }) {
             background-color: #017d7d;
             border: 1px solid #017d7d;
           }
-      `}
+
+          .image-size {
+            transition: transform 0.5s;
+          }
+
+          .image-size:hover {
+            transform: scale(1.1); 
+          }
+        `}
       </style>
       <Card
         style={{
           backgroundColor: "var(--Fourth-color)",
           color: "var(--third-color)",
+          overflow: "hidden",
         }}
       >
         <img
@@ -39,6 +53,8 @@ function ProjectsCard({ project }) {
           className={`image-size ${imageLoaded ? "" : "blur"}`}
           loading="lazy"
           onLoad={handleImageLoad}
+          onClick={redirectToProjectDetails}
+          style={{ cursor: "pointer" }}
         />
         <Card.Body style={{ textAlign: "center" }}>
           <Card.Title
@@ -62,8 +78,7 @@ function ProjectsCard({ project }) {
             {project.subname}
           </Card.Text>
           <Button
-            as={Link}
-            to={`/projects/${project.id}`}
+            onClick={redirectToProjectDetails}
             variant="primary"
             className="resp-text bg-green"
           >

@@ -64,7 +64,7 @@ function ProfileSidebar() {
                     >
                       <ListGroup.Item
                         style={{
-                          backgroundColor: "var(--secondary-color)",
+                          backgroundColor: "var(--Fourth-color)",
                           color: "var(--third-color)",
                         }}
                       >
@@ -93,7 +93,7 @@ function ProfileSidebar() {
 
                       <ListGroup.Item
                         style={{
-                          backgroundColor: "var(--secondary-color)",
+                          backgroundColor: "var(--Fourth-color)",
                           color: "var(--third-color)",
                         }}
                       >
@@ -123,7 +123,7 @@ function ProfileSidebar() {
 
                       <ListGroup.Item
                         style={{
-                          backgroundColor: "var(--secondary-color)",
+                          backgroundColor: "var(--Fourth-color)",
                           color: "var(--third-color)",
                         }}
                       >

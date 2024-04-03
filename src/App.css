@@ -36,6 +36,10 @@
   ;
 }
 
+.dark-mode body {
+  background-image: url("../public/Images/page-bg-dark.jpg");
+}
+
 .blur {
   filter: blur(10px);
 }

@@ -41,24 +41,26 @@ function ProjectsScreen() {
         style={{ color: "var(--third-color)" }}
       >
         <Col>
-          <Button
-            className="bg-green"
-            onClick={() => handleButtonClick("desktop")}
-          >
-            <i className="fa-light fa-desktop"></i>
-          </Button>
-          <Button
-            className="bg-green"
-            onClick={() => handleButtonClick("tablet")}
-          >
-            <i className="fa-light fa-tablet"></i>
-          </Button>
-          <Button
-            className="bg-green"
-            onClick={() => handleButtonClick("mobile")}
-          >
-            <i className="fa-light fa-mobile"></i>
-          </Button>
+          <div className="d-flex">
+            <Button
+              className="bg-green"
+              onClick={() => handleButtonClick("desktop")}
+            >
+              <i className="fa-light fa-desktop"></i>
+            </Button>
+            <Button
+              className="bg-green"
+              onClick={() => handleButtonClick("tablet")}
+            >
+              <i className="fa-light fa-tablet"></i>
+            </Button>
+            <Button
+              className="bg-green"
+              onClick={() => handleButtonClick("mobile")}
+            >
+              <i className="fa-light fa-mobile"></i>
+            </Button>
+          </div>
         </Col>
         <Row>
           <Col className="my-5">

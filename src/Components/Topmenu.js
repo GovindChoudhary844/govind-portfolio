@@ -5,7 +5,7 @@ import "../App.css";
 import "./Topmenu.css";
 import ModeButton from "../Components/ModeButton";
 
-function Topmenu({ darkMode, toggleDarkMode }) {
+function Topmenu() {
   const [menuVisible, setMenuVisible] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const menuRef = useRef(null);
@@ -52,6 +52,26 @@ function Topmenu({ darkMode, toggleDarkMode }) {
     toggleMenu();
   };
 
+  const [darkMode, setDarkMode] = useState(() => {
+    // Get the value from localStorage if available, or default to false (light mode)
+    const savedDarkMode = localStorage.getItem("darkMode");
+    return savedDarkMode ? JSON.parse(savedDarkMode) : false;
+  });
+
+  const toggleDarkMode = () => {
+    setDarkMode((prevDarkMode) => !prevDarkMode);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
+    // Here you can also apply dark mode to the entire app
+    if (darkMode) {
+      document.documentElement.classList.add("dark-mode");
+    } else {
+      document.documentElement.classList.remove("dark-mode");
+    }
+  }, [darkMode]);
+
   return (
     <>
       <Container fluid>
@@ -86,7 +106,6 @@ function Topmenu({ darkMode, toggleDarkMode }) {
                 />
               </div>
 
-              {/* Toggle menu visibility when clicking top-menu-button */}
               <div className="top-menu-button" onClick={handleClickMenu}>
                 {menuVisible ? (
                   <i className="fa-solid fa-xmark resp-h3"></i>
