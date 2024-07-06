@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { Row, Col, Modal } from "react-bootstrap";
+import { Row, Col, Modal, Button } from "react-bootstrap";
 import "../../App.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -15,10 +15,9 @@ function ProjectScreenDesktop() {
 
   const [showModal, setShowModal] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-
   const [videoLoaded, setVideoLoaded] = useState(false);
-
   const [ImageLoaded, setImageLoaded] = useState(false);
+  const [copySuccess, setCopySuccess] = useState("");
 
   const handleImageLoad = () => {
     setImageLoaded(true);
@@ -26,6 +25,21 @@ function ProjectScreenDesktop() {
 
   const handleVideoLoad = () => {
     setVideoLoaded(true);
+  };
+
+  const handleCopy = () => {
+    if (project && project.link) {
+      navigator.clipboard
+        .writeText(project.link)
+        .then(() => {
+          setCopySuccess("Link copied!");
+          setTimeout(() => setCopySuccess(""), 2000); // Clear the message after 2 seconds
+        })
+        .catch((err) => {
+          setCopySuccess("Failed to copy link");
+          setTimeout(() => setCopySuccess(""), 2000); // Clear the message after 2 seconds
+        });
+    }
   };
 
   const settings = {
@@ -77,6 +91,15 @@ function ProjectScreenDesktop() {
               >
                 {project.link}
               </a>
+              <Button
+                variant="outline-secondary"
+                size="sm"
+                className="ms-2"
+                onClick={handleCopy}
+              >
+                Copy
+              </Button>
+              {copySuccess && <span className="ms-2">{copySuccess}</span>}
             </p>
           )}
         </Col>
@@ -117,14 +140,14 @@ function ProjectScreenDesktop() {
         <Col>
           <Slider {...settings}>
             {project &&
-              project.imagesDesktop.map((index) => (
+              project.imagesDesktop.map((image, index) => (
                 <div key={index} className="p-1">
                   <img
                     src={
                       project
                         ? process.env.PUBLIC_URL +
                           "/" +
-                          project.imagesDesktop[selectedImageIndex]
+                          project.imagesDesktop[index]
                         : ""
                     }
                     alt=""
