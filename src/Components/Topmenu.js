@@ -84,12 +84,18 @@ function Topmenu() {
               className="d-flex align-items-center top-navbar-col rounded-start-2"
             >
               <div className="d-flex align-items-center">
-                <p className="logo-name mb-0">Govind</p>
-                <img
-                  src={process.env.PUBLIC_URL + "/Images/top-logo.png"}
-                  alt="Govind"
-                  className="logo-image ms-2"
-                />
+                <Link
+                  to="/"
+                  className="d-flex align-items-center"
+                  style={{ textDecoration: "none" }}
+                >
+                  <p className="logo-name mb-0">Govind</p>
+                  <img
+                    src={process.env.PUBLIC_URL + "/Images/top-logo.png"}
+                    alt="Govind"
+                    className="logo-image ms-2"
+                  />
+                </Link>
               </div>
             </Col>
 

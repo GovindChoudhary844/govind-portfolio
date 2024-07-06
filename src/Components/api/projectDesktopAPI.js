@@ -238,7 +238,6 @@ const projectDesktopAPI = [
       "Images/Projects/MensSwag/MensSwag-Mobile-SS/12.png",
       "Images/Projects/MensSwag/MensSwag-Mobile-SS/13.png",
     ],
-    link: "https://govindchoudhary844.github.io/G-C-Organics/",
   },
 ];
 
